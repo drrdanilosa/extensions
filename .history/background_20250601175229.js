@@ -241,42 +241,6 @@ var platforms = [
     // 🎪 Sites Diversos
     { name: 'Clubhouse', url: 'https://clubhouse.com/@{username}', icon: '🎪', category: 'social', risk: 'low' },
     { name: 'Mastodon', url: 'https://mastodon.social/@{username}', icon: '🐘', category: 'social', risk: 'low' },
-    { name: 'Truth Social', url: 'https://truthsocial.com/@{username}', icon: '🗣️', category: 'social', risk: 'low' },    { name: 'Gettr', url: 'https://gettr.com/user/{username}', icon: '🔊', category: 'social', risk: 'low' },
-
-    // 🎧 Sites de Música Brasileiros
-    { name: 'Palco MP3', url: 'https://palcomp3.com/{username}', icon: '🎵', category: 'music', risk: 'low' },
-    { name: 'Vagalume', url: 'https://vagalume.com.br/{username}', icon: '🎤', category: 'music', risk: 'low' },
-    { name: 'Spotify Brasil', url: 'https://open.spotify.com/artist/{username}', icon: '🎵', category: 'music', risk: 'low' },
-    { name: 'Deezer BR', url: 'https://www.deezer.com/br/artist/{username}', icon: '🎧', category: 'music', risk: 'low' },
-    { name: 'YouTube Music', url: 'https://music.youtube.com/channel/{username}', icon: '🎵', category: 'music', risk: 'low' },
-
-    // 🎮 Sites de Gaming Brasileiros
-    { name: 'Gamersclub', url: 'https://gamersclub.com.br/player/{username}', icon: '🎮', category: 'gaming', risk: 'low' },
-    { name: 'Battlefy', url: 'https://battlefy.com/{username}', icon: '🏆', category: 'gaming', risk: 'low' },
-    { name: 'Adrenaline', url: 'https://adrenaline.com.br/forum/members/{username}', icon: '🔥', category: 'gaming', risk: 'low' },
-    { name: 'Razer Connect', url: 'https://razerid.razer.com/{username}', icon: '🐍', category: 'gaming', risk: 'low' },
-    
-    // 🛒 Sites de E-commerce Brasileiros
-    { name: 'Mercado Livre', url: 'https://mercadolivre.com.br/perfil/{username}', icon: '🛒', category: 'shop', risk: 'low' },
-    { name: 'Elo7', url: 'https://elo7.com.br/{username}', icon: '🎁', category: 'shop', risk: 'low' },
-    { name: 'Enjoei', url: 'https://enjoei.com.br/@{username}', icon: '👗', category: 'shop', risk: 'low' },
-    { name: 'Hotmart', url: 'https://hotmart.com/pt-br/marketplace/{username}', icon: '🔥', category: 'shop', risk: 'low' },
-
-    // 💰 Sites de Investimento Brasileiros
-    { name: 'Rico Investimentos', url: 'https://rico.com.vc/{username}', icon: '💰', category: 'finance', risk: 'medium' },
-    { name: 'XP Investimentos', url: 'https://xpi.com.br/{username}', icon: '📈', category: 'finance', risk: 'medium' },
-    { name: 'Clear', url: 'https://clear.com.br/{username}', icon: '💹', category: 'finance', risk: 'medium' },
-    { name: 'NuInvest', url: 'https://nuinvest.com.br/{username}', icon: '💸', category: 'finance', risk: 'medium' },
-    
-    // 📰 Plataformas de Blog/Notícias Brasileiras
-    { name: 'WordPress BR', url: 'https://{username}.wordpress.com', icon: '📝', category: 'blog', risk: 'low' },
-    { name: 'Medium BR', url: 'https://medium.com/@{username}', icon: '📄', category: 'blog', risk: 'low' },
-    { name: 'Blogger BR', url: 'https://{username}.blogspot.com.br', icon: '📰', category: 'blog', risk: 'low' },
-    { name: 'Jusbrasil', url: 'https://jusbrasil.com.br/perfil/{username}', icon: '⚖️', category: 'blog', risk: 'low' },
-    
-    // 💡 Sites de Tecnologia Brasileiros
-    { name: 'GitHub BR', url: 'https://github.com/{username}', icon: '💻', category: 'dev', risk: 'low' },
-    { name: 'GitLab BR', url: 'https://gitlab.com/{username}', icon: '🦊', category: 'dev', risk: 'low' },
-    { name: 'Tabnews', url: 'https://tabnews.com.br/perfil/{username}', icon: '📋', category: 'dev', risk: 'low' },
-    { name: 'Forums Clube do Hardware', url: 'https://clubedohardware.com.br/profile/{username}', icon: '🔧', category: 'tech', risk: 'low' }
+    { name: 'Truth Social', url: 'https://truthsocial.com/@{username}', icon: '🗣️', category: 'social', risk: 'low' },
+    { name: 'Gettr', url: 'https://gettr.com/user/{username}', icon: '🔊', category: 'social', risk: 'low' }
 ];

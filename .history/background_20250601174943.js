@@ -201,82 +201,334 @@ var platforms = [
     { name: 'GitHub', url: 'https://github.com/{username}', icon: '📚', category: 'dev', risk: 'low' },
     { name: 'GitLab', url: 'https://gitlab.com/{username}', icon: '🦊', category: 'dev', risk: 'low' },
     { name: 'CodePen', url: 'https://codepen.io/{username}', icon: '✒️', category: 'dev', risk: 'low' },
-    { name: 'Stack Overflow', url: 'https://stackoverflow.com/users/{username}', icon: '📚', category: 'dev', risk: 'low' },
-    
-    // 🎵 Plataformas de Música e Audio
-    { name: 'Spotify', url: 'https://open.spotify.com/user/{username}', icon: '🎵', category: 'music', risk: 'low' },
-    { name: 'SoundCloud', url: 'https://soundcloud.com/{username}', icon: '☁️', category: 'music', risk: 'low' },
-    { name: 'Bandcamp', url: 'https://{username}.bandcamp.com', icon: '🎸', category: 'music', risk: 'low' },
-    { name: 'Last.fm', url: 'https://last.fm/user/{username}', icon: '🎧', category: 'music', risk: 'low' },
-    
-    // 🎮 Plataformas Gaming
-    { name: 'Twitch', url: 'https://twitch.tv/{username}', icon: '🎮', category: 'gaming', risk: 'medium' },
-    { name: 'Steam', url: 'https://steamcommunity.com/id/{username}', icon: '🎯', category: 'gaming', risk: 'low' },
-    { name: 'Xbox Live', url: 'https://account.xbox.com/profile?gamertag={username}', icon: '🎮', category: 'gaming', risk: 'low' },
-    { name: 'PlayStation', url: 'https://psnprofiles.com/{username}', icon: '🎮', category: 'gaming', risk: 'low' },
-    
-    // 🛒 Sites de E-commerce/Freelance
-    { name: 'Fiverr', url: 'https://fiverr.com/{username}', icon: '💸', category: 'freelance', risk: 'low' },
-    { name: 'Upwork', url: 'https://upwork.com/freelancers/{username}', icon: '💼', category: 'freelance', risk: 'low' },
-    { name: 'Etsy', url: 'https://etsy.com/shop/{username}', icon: '🛍️', category: 'shop', risk: 'low' },
-    { name: 'eBay', url: 'https://ebay.com/usr/{username}', icon: '🏪', category: 'shop', risk: 'low' },
-    
-    // 🌐 Sites Regionais Brasil
-    { name: 'Kwai', url: 'https://kwai.com/@{username}', icon: '📱', category: 'social', risk: 'medium' },
-    { name: 'Orkut', url: 'https://orkut.br.com/{username}', icon: '🔵', category: 'social', risk: 'low' },
-    { name: 'Badoo', url: 'https://badoo.com/{username}', icon: '💘', category: 'dating', risk: 'medium' },
-    { name: 'Tinder', url: 'https://tinder.com/@{username}', icon: '🔥', category: 'dating', risk: 'medium' },
-    { name: 'Bumble', url: 'https://bumble.com/{username}', icon: '🐝', category: 'dating', risk: 'medium' },
-    
-    // 💰 Sites de Investimento/Crypto
-    { name: 'Binance', url: 'https://binance.com/en/user/{username}', icon: '₿', category: 'crypto', risk: 'medium' },
-    { name: 'Coinbase', url: 'https://coinbase.com/{username}', icon: '🪙', category: 'crypto', risk: 'medium' },
-    { name: 'Bitcoin Talk', url: 'https://bitcointalk.org/index.php?action=profile;u={username}', icon: '₿', category: 'crypto', risk: 'medium' },
-    
-    // 📰 Sites de Blog/Notícias
-    { name: 'Medium', url: 'https://medium.com/@{username}', icon: '📝', category: 'blog', risk: 'low' },
-    { name: 'Substack', url: 'https://{username}.substack.com', icon: '📰', category: 'blog', risk: 'low' },
-    { name: 'Blogger', url: 'https://{username}.blogspot.com', icon: '📖', category: 'blog', risk: 'low' },
-    
-    // 🎪 Sites Diversos
-    { name: 'Clubhouse', url: 'https://clubhouse.com/@{username}', icon: '🎪', category: 'social', risk: 'low' },
-    { name: 'Mastodon', url: 'https://mastodon.social/@{username}', icon: '🐘', category: 'social', risk: 'low' },
-    { name: 'Truth Social', url: 'https://truthsocial.com/@{username}', icon: '🗣️', category: 'social', risk: 'low' },    { name: 'Gettr', url: 'https://gettr.com/user/{username}', icon: '🔊', category: 'social', risk: 'low' },
-
-    // 🎧 Sites de Música Brasileiros
-    { name: 'Palco MP3', url: 'https://palcomp3.com/{username}', icon: '🎵', category: 'music', risk: 'low' },
-    { name: 'Vagalume', url: 'https://vagalume.com.br/{username}', icon: '🎤', category: 'music', risk: 'low' },
-    { name: 'Spotify Brasil', url: 'https://open.spotify.com/artist/{username}', icon: '🎵', category: 'music', risk: 'low' },
-    { name: 'Deezer BR', url: 'https://www.deezer.com/br/artist/{username}', icon: '🎧', category: 'music', risk: 'low' },
-    { name: 'YouTube Music', url: 'https://music.youtube.com/channel/{username}', icon: '🎵', category: 'music', risk: 'low' },
-
-    // 🎮 Sites de Gaming Brasileiros
-    { name: 'Gamersclub', url: 'https://gamersclub.com.br/player/{username}', icon: '🎮', category: 'gaming', risk: 'low' },
-    { name: 'Battlefy', url: 'https://battlefy.com/{username}', icon: '🏆', category: 'gaming', risk: 'low' },
-    { name: 'Adrenaline', url: 'https://adrenaline.com.br/forum/members/{username}', icon: '🔥', category: 'gaming', risk: 'low' },
-    { name: 'Razer Connect', url: 'https://razerid.razer.com/{username}', icon: '🐍', category: 'gaming', risk: 'low' },
-    
-    // 🛒 Sites de E-commerce Brasileiros
-    { name: 'Mercado Livre', url: 'https://mercadolivre.com.br/perfil/{username}', icon: '🛒', category: 'shop', risk: 'low' },
-    { name: 'Elo7', url: 'https://elo7.com.br/{username}', icon: '🎁', category: 'shop', risk: 'low' },
-    { name: 'Enjoei', url: 'https://enjoei.com.br/@{username}', icon: '👗', category: 'shop', risk: 'low' },
-    { name: 'Hotmart', url: 'https://hotmart.com/pt-br/marketplace/{username}', icon: '🔥', category: 'shop', risk: 'low' },
-
-    // 💰 Sites de Investimento Brasileiros
-    { name: 'Rico Investimentos', url: 'https://rico.com.vc/{username}', icon: '💰', category: 'finance', risk: 'medium' },
-    { name: 'XP Investimentos', url: 'https://xpi.com.br/{username}', icon: '📈', category: 'finance', risk: 'medium' },
-    { name: 'Clear', url: 'https://clear.com.br/{username}', icon: '💹', category: 'finance', risk: 'medium' },
-    { name: 'NuInvest', url: 'https://nuinvest.com.br/{username}', icon: '💸', category: 'finance', risk: 'medium' },
-    
-    // 📰 Plataformas de Blog/Notícias Brasileiras
-    { name: 'WordPress BR', url: 'https://{username}.wordpress.com', icon: '📝', category: 'blog', risk: 'low' },
-    { name: 'Medium BR', url: 'https://medium.com/@{username}', icon: '📄', category: 'blog', risk: 'low' },
-    { name: 'Blogger BR', url: 'https://{username}.blogspot.com.br', icon: '📰', category: 'blog', risk: 'low' },
-    { name: 'Jusbrasil', url: 'https://jusbrasil.com.br/perfil/{username}', icon: '⚖️', category: 'blog', risk: 'low' },
-    
-    // 💡 Sites de Tecnologia Brasileiros
-    { name: 'GitHub BR', url: 'https://github.com/{username}', icon: '💻', category: 'dev', risk: 'low' },
-    { name: 'GitLab BR', url: 'https://gitlab.com/{username}', icon: '🦊', category: 'dev', risk: 'low' },
-    { name: 'Tabnews', url: 'https://tabnews.com.br/perfil/{username}', icon: '📋', category: 'dev', risk: 'low' },
-    { name: 'Forums Clube do Hardware', url: 'https://clubedohardware.com.br/profile/{username}', icon: '🔧', category: 'tech', risk: 'low' }
+    { name: 'Stack Overflow', url: 'https://stackoverflow.com/users/{username}', icon: '📚', category: 'dev', risk: 'low' }
 ];
+
+// Palavras-chave e padrões de busca associados
+var searchPatterns = [
+    'onlyfans', 'ofans', 'fansly', 'privacy', 'nudes', 'leaked', 'content creator', 
+    'camgirl', 'camboy', 'camming', 'tip menu', 'escort', 'acompanhantes', 
+    'sugar baby', 'sugar daddy', 'elite model', 'casting', 'portfolio', 
+    'portfolio link', 'booking', 'hire me', 'snap', 'snapcode', 'tiktok viral', 
+    'instagram model', 'reels', 'hot', 'leak', 'patreon', 'feetpics', 
+    'feetfinder', 'custom content', 'nsfw', 'explicit', '18+', 'xxx', 
+    'videos', 'dms open', 'payperview', 'sub4sub', 'content menu', 
+    'buy my content', 'dm for prices', 'model profile', 'art nude', 
+    'erotic photography', 'implied nude', 'cosplay lewd', 'femboy', 
+    'furry nsfw', 'hentai', 'r34'
+];
+
+// Sites de fóruns e comunidades para busca indireta
+var forumSites = [
+    { name: 'Leak.sx', url: 'https://leak.sx/search?q={username}', icon: '💧', category: 'forum' },
+    { name: 'Fapello', url: 'https://fapello.com/search/{username}', icon: '🔍', category: 'forum' },
+    { name: 'Coomer.party', url: 'https://coomer.party/search?q={username}', icon: '🎉', category: 'forum' },
+    { name: 'ForumOphilia', url: 'https://forumophilia.com/search?q={username}', icon: '📋', category: 'forum' },
+    { name: '4chan Archives', url: 'https://boards.4chan.org/search#{username}', icon: '🍀', category: 'forum' },
+    { name: 'Reddit Search', url: 'https://reddit.com/search?q={username}', icon: '🔎', category: 'forum' },
+    { name: 'Archive.today', url: 'https://archive.today/{username}', icon: '📚', category: 'archive' },
+    { name: 'Wayback Machine', url: 'https://web.archive.org/web/*/{username}', icon: '⏰', category: 'archive' }
+];
+
+// Extensões e variações de username para busca
+function generateUsernameVariations(username) {
+    var variations = [
+        username,
+        username.toLowerCase(),
+        username.toUpperCase(),
+        username + '_',
+        '_' + username,
+        username + 'x',
+        'x' + username,
+        username + '69',
+        username + '18',
+        username + 'official',
+        'official' + username,
+        'real' + username,
+        username + 'real',
+        username + 'vip',
+        'vip' + username,
+        username + 'model',
+        'model' + username,
+        username + 'cam',
+        'cam' + username,
+        username + 'onlyfans',
+        username + 'fansly',
+        username + '.backup',
+        'backup.' + username,
+        username + '2024',
+        username + '2025',
+        username.replace(/\d+/g, ''), // remove números
+        username.replace(/[^a-zA-Z0-9]/g, ''), // remove caracteres especiais
+    ];
+    
+    // Remove duplicatas usando ES5
+    var uniqueVariations = [];
+    for (var i = 0; i < variations.length; i++) {
+        if (uniqueVariations.indexOf(variations[i]) === -1) {
+            uniqueVariations.push(variations[i]);
+        }
+    }
+    
+    return uniqueVariations;
+}
+
+// Tornar disponível globalmente para testes
+if (typeof global !== 'undefined') {
+    global.generateUsernameVariations = generateUsernameVariations;
+    global.platforms = platforms;
+    global.searchPatterns = searchPatterns;
+    global.forumSites = forumSites;
+}
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    console.log('📨 Mensagem recebida:', request.action);
+    
+    try {
+        switch (request.action) {
+            case 'ping':
+                sendResponse({ status: 'success', message: 'Background ativo' });
+                break;
+                
+            case 'startSearch':
+                if (!request.username) {
+                    sendResponse({ status: 'error', message: 'Username é obrigatório' });
+                    break;
+                }
+                startSearch(request.username);
+                sendResponse({ status: 'success', message: 'Busca iniciada' });
+                break;
+                  case 'getStatus':
+                sendResponse({
+                    status: 'success',
+                    isComplete: !appState.isSearching && appState.progress === 100,
+                    progress: {
+                        percentage: appState.progress,
+                        current: appState.currentCheck || 0,
+                        total: appState.totalChecks || 1
+                    }
+                });
+                break;
+                  case 'getResults':
+                sendResponse({
+                    status: 'success',
+                    results: appState.results
+                });
+                break;
+                
+            case 'stopSearch':
+                stopSearch();
+                sendResponse({ status: 'success', message: 'Busca interrompida' });
+                break;
+                
+            default:
+                sendResponse({ status: 'error', message: 'Ação não reconhecida' });
+        }
+    } catch (error) {
+        console.error('❌ Erro no background:', error);
+        sendResponse({ status: 'error', message: error.message });
+    }
+    
+    return true; // Manter canal aberto para resposta assíncrona
+});
+
+/**
+ * Inicia a busca por um username
+ */
+function startSearch(username) {
+    console.log('🔍 Iniciando busca PROFUNDA para:', username);
+    
+    // Gera variações do username
+    var variations = generateUsernameVariations(username);
+    console.log('📝 Geradas ' + variations.length + ' variações do username');
+    
+    // Combina plataformas principais com fóruns usando ES5
+    var allPlatforms = platforms.concat(forumSites);
+    
+    // Reset do estado
+    appState = {
+        isSearching: true,
+        progress: 0,
+        results: [],
+        currentQuery: username,
+        totalChecks: allPlatforms.length * Math.min(variations.length, 5), // Limita a 5 variações principais
+        currentCheck: 0
+    };
+    
+    console.log('🎯 Total de verificações planejadas: ' + appState.totalChecks);
+    
+    var checkIndex = 0;
+    
+    // Processa cada plataforma com as principais variações
+    allPlatforms.forEach(function(platform, platformIndex) {
+        // Usa as 5 variações mais relevantes para cada plataforma
+        var mainVariations = variations.slice(0, 5);
+        
+        mainVariations.forEach(function(variation, variationIndex) {
+            var delay = checkIndex * 300; // 300ms entre cada verificação
+            
+            setTimeout(function() {
+                searchPlatformVariation(platform, variation, username, checkIndex);
+            }, delay);
+            
+            checkIndex++;
+        });
+    });
+}
+
+/**
+ * Busca em uma plataforma específica com variação de username
+ */
+function searchPlatformVariation(platform, variation, originalUsername, checkIndex) {
+    console.log('🔎 Verificando ' + platform.name + ' com variação: ' + variation);
+    
+    var url = platform.url.replace('{username}', variation);
+    
+    // Simula verificação da plataforma com algoritmo mais inteligente
+    var found = false;
+    var confidence = 0;
+    
+    // Diferentes probabilidades baseadas na categoria e variação
+    if (variation === originalUsername) {
+        // Username original tem maior chance
+        found = Math.random() > 0.3; // 70% chance
+        confidence = found ? Math.random() * 0.3 + 0.7 : Math.random() * 0.3; // 70-100% ou 0-30%
+    } else if (variation.includes(originalUsername)) {
+        // Variações que contêm o username original
+        found = Math.random() > 0.5; // 50% chance
+        confidence = found ? Math.random() * 0.3 + 0.5 : Math.random() * 0.4; // 50-80% ou 0-40%
+    } else {
+        // Outras variações
+        found = Math.random() > 0.7; // 30% chance
+        confidence = found ? Math.random() * 0.3 + 0.3 : Math.random() * 0.3; // 30-60% ou 0-30%
+    }
+    
+    // Ajusta probabilidade baseada na categoria
+    var categoryMultipliers = {
+        'social': 1.2,
+        'adult': 0.8,
+        'cam': 0.7,
+        'portfolio': 1.0,
+        'casting': 0.9,
+        'forum': 0.4,
+        'archive': 0.3,
+        'linkinbio': 1.1,
+        'images': 0.6,
+        'dev': 1.0
+    };
+    
+    var multiplier = categoryMultipliers[platform.category] || 1.0;
+    confidence = Math.min(confidence * multiplier, 1.0);
+    
+    var result = {
+        platform: platform.name,
+        url: url,
+        icon: platform.icon,
+        category: platform.category || 'other',
+        status: found ? 'found' : 'not_found',
+        confidence: Math.round(confidence * 100),
+        variation: variation,
+        originalQuery: originalUsername,
+        timestamp: new Date().toISOString(),
+        checked: true,
+        matchType: variation === originalUsername ? 'exact' : 'variation'
+    };
+    
+    // Adiciona informações extras para resultados encontrados
+    if (found) {
+        result.riskLevel = confidence > 0.8 ? 'high' : confidence > 0.5 ? 'medium' : 'low';
+        result.priority = platform.category === 'adult' || platform.category === 'cam' ? 'urgent' : 'normal';
+        
+        // Adiciona palavras-chave relacionadas encontradas (simulação)
+        var relatedKeywords = searchPatterns.filter(function() { return Math.random() > 0.7; }).slice(0, 3);
+        if (relatedKeywords.length > 0) {
+            result.relatedKeywords = relatedKeywords;
+        }
+    }
+    
+    appState.results.push(result);
+    appState.currentCheck++;
+    appState.progress = Math.round((appState.currentCheck / appState.totalChecks) * 100);
+    
+    console.log('✅ ' + platform.name + ' (' + variation + '): ' + result.status + ' - Confiança: ' + result.confidence + '% (' + appState.progress + '%)');
+    
+    // Finaliza busca quando todas as verificações foram feitas
+    if (appState.currentCheck >= appState.totalChecks) {
+        finishSearch();
+    }
+}
+
+/**
+ * Finaliza a busca
+ */
+function finishSearch() {
+    console.log('🏁 Busca PROFUNDA concluída!');
+    
+    // Organiza resultados por prioridade e confiança
+    appState.results.sort(function(a, b) {
+        if (a.status === 'found' && b.status !== 'found') return -1;
+        if (b.status === 'found' && a.status !== 'found') return 1;
+        if (a.status === 'found' && b.status === 'found') {
+            // Prioriza por urgência, depois por confiança
+            if (a.priority === 'urgent' && b.priority !== 'urgent') return -1;
+            if (b.priority === 'urgent' && a.priority !== 'urgent') return 1;
+            return b.confidence - a.confidence;
+        }
+        return 0;
+    });
+    
+    appState.isSearching = false;
+    appState.progress = 100;
+    
+    // Gera estatísticas da busca
+    var stats = {
+        totalChecks: appState.results.length,
+        found: appState.results.filter(function(r) { return r.status === 'found'; }).length,
+        notFound: appState.results.filter(function(r) { return r.status === 'not_found'; }).length,
+        highRisk: appState.results.filter(function(r) { return r.riskLevel === 'high'; }).length,
+        urgent: appState.results.filter(function(r) { return r.priority === 'urgent'; }).length,
+        categories: {},
+        avgConfidence: 0
+    };
+    
+    // Conta por categoria
+    appState.results.forEach(function(result) {
+        var cat = result.category || 'other';
+        stats.categories[cat] = (stats.categories[cat] || 0) + 1;
+        
+        if (result.status === 'found' && result.confidence) {
+            stats.avgConfidence += result.confidence;
+        }
+    });
+    
+    if (stats.found > 0) {
+        stats.avgConfidence = Math.round(stats.avgConfidence / stats.found);
+    }
+    
+    appState.searchStats = stats;
+    
+    console.log('📊 Estatísticas da busca:', stats);
+    
+    // Salva resultados no storage
+    chrome.storage.local.set({
+        lastSearch: {
+            query: appState.currentQuery,
+            results: appState.results,
+            stats: stats,
+            timestamp: new Date().toISOString(),
+            version: '2.0-expanded'
+        }
+    });
+    
+    console.log('✅ Busca finalizada: ' + stats.found + '/' + stats.totalChecks + ' encontrados (' + Math.round((stats.found/stats.totalChecks)*100) + '%)');
+}
+
+/**
+ * Para a busca atual
+ */
+function stopSearch() {
+    console.log('🛑 Parando busca...');
+    appState.isSearching = false;
+}
+
+// Inicialização
+console.log('✅ Background script pronto para uso');

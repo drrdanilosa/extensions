@@ -6,15 +6,34 @@
 // Função principal de inicialização
 document.addEventListener('DOMContentLoaded', async function() {
     console.log('🚀 DeepAlias Hunter Pro v3.0 - Inicializando...');
-      try {
-        // Usar sempre a versão de fallback por compatibilidade
-        initializeFallbackApp();
+    
+    try {
+        // Tentar carregar a nova arquitetura modular
+        if (typeof window.importModule === 'function') {
+            await initializeModularApp();
+        } else {
+            // Fallback para versão compatível
+            initializeFallbackApp();
+        }
     } catch (error) {
-        console.error('❌ Erro crítico ao inicializar:', error);
+        console.warn('⚠️ Erro ao carregar módulos, usando versão de fallback:', error);
+        initializeFallbackApp();
     }
 });
 
-// Versão de fallback (compatível) - SEMPRE USAR
+// Versão modular (ES6)
+async function initializeModularApp() {
+    try {
+        const { initializeApp } = await import('./src/popup/popup.js');
+        await initializeApp();
+        console.log('✅ Aplicação modular carregada com sucesso');
+    } catch (error) {
+        console.error('❌ Erro na aplicação modular:', error);
+        throw error;
+    }
+}
+
+// Versão de fallback (compatível)
 function initializeFallbackApp() {
     console.log('🔄 Inicializando versão de fallback...');
     

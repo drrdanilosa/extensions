@@ -21,8 +21,9 @@
       "128": "icons/icon128.png"
     }
   },
-    "background": {
-    "scripts": ["background.js"],
+  
+  "background": {
+    "scripts": ["src/background/background.js"],
     "persistent": true
   },
   
