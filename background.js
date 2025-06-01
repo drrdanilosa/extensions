@@ -6,7 +6,7 @@
 console.log('🚀 DeepAlias Hunter Pro - Background Script Iniciado');
 
 // Estado da aplicação
-let appState = {
+var appState = {
     isSearching: false,
     progress: 0,
     results: [],
@@ -14,7 +14,7 @@ let appState = {
 };
 
 // Plataformas para busca - Base de dados completa expandida
-const platforms = [
+var platforms = [
     // 🔷 Redes Sociais Principais
     { name: 'Instagram', url: 'https://instagram.com/{username}', icon: '📷', category: 'social' },
     { name: 'Facebook', url: 'https://facebook.com/{username}', icon: '👥', category: 'social' },
@@ -113,7 +113,7 @@ const platforms = [
 ];
 
 // Palavras-chave e padrões de busca associados
-const searchPatterns = [
+var searchPatterns = [
     'onlyfans', 'ofans', 'fansly', 'privacy', 'nudes', 'leaked', 'content creator', 
     'camgirl', 'camboy', 'camming', 'tip menu', 'escort', 'acompanhantes', 
     'sugar baby', 'sugar daddy', 'elite model', 'casting', 'portfolio', 
@@ -127,7 +127,7 @@ const searchPatterns = [
 ];
 
 // Sites de fóruns e comunidades para busca indireta
-const forumSites = [
+var forumSites = [
     { name: 'Leak.sx', url: 'https://leak.sx/search?q={username}', icon: '💧', category: 'forum' },
     { name: 'Fapello', url: 'https://fapello.com/search/{username}', icon: '🔍', category: 'forum' },
     { name: 'Coomer.party', url: 'https://coomer.party/search?q={username}', icon: '🎉', category: 'forum' },
@@ -140,40 +140,55 @@ const forumSites = [
 
 // Extensões e variações de username para busca
 function generateUsernameVariations(username) {
-    const variations = [
+    var variations = [
         username,
         username.toLowerCase(),
         username.toUpperCase(),
-        `${username}_`,
-        `_${username}`,
-        `${username}x`,
-        `x${username}`,
-        `${username}69`,
-        `${username}18`,
-        `${username}official`,
-        `official${username}`,
-        `real${username}`,
-        `${username}real`,
-        `${username}vip`,
-        `vip${username}`,
-        `${username}model`,
-        `model${username}`,
-        `${username}cam`,
-        `cam${username}`,
-        `${username}onlyfans`,
-        `${username}fansly`,
-        `${username}.backup`,
-        `backup.${username}`,
-        `${username}2024`,
-        `${username}2025`,
+        username + '_',
+        '_' + username,
+        username + 'x',
+        'x' + username,
+        username + '69',
+        username + '18',
+        username + 'official',
+        'official' + username,
+        'real' + username,
+        username + 'real',
+        username + 'vip',
+        'vip' + username,
+        username + 'model',
+        'model' + username,
+        username + 'cam',
+        'cam' + username,
+        username + 'onlyfans',
+        username + 'fansly',
+        username + '.backup',
+        'backup.' + username,
+        username + '2024',
+        username + '2025',
         username.replace(/\d+/g, ''), // remove números
         username.replace(/[^a-zA-Z0-9]/g, ''), // remove caracteres especiais
     ];
     
-    // Remove duplicatas
-    return [...new Set(variations)];
+    // Remove duplicatas usando ES5
+    var uniqueVariations = [];
+    for (var i = 0; i < variations.length; i++) {
+        if (uniqueVariations.indexOf(variations[i]) === -1) {
+            uniqueVariations.push(variations[i]);
+        }
+    }
+    
+    return uniqueVariations;
 }
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+
+// Tornar disponível globalmente para testes
+if (typeof global !== 'undefined') {
+    global.generateUsernameVariations = generateUsernameVariations;
+    global.platforms = platforms;
+    global.searchPatterns = searchPatterns;
+    global.forumSites = forumSites;
+}
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     console.log('📨 Mensagem recebida:', request.action);
     
     try {
@@ -190,23 +205,21 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
                 startSearch(request.username);
                 sendResponse({ status: 'success', message: 'Busca iniciada' });
                 break;
-                
-            case 'getStatus':
+                  case 'getStatus':
                 sendResponse({
                     status: 'success',
-                    data: {
-                        isSearching: appState.isSearching,
-                        progress: appState.progress,
-                        query: appState.currentQuery,
-                        resultsCount: appState.results.length
+                    isComplete: !appState.isSearching && appState.progress === 100,
+                    progress: {
+                        percentage: appState.progress,
+                        current: appState.currentCheck || 0,
+                        total: appState.totalChecks || 1
                     }
                 });
                 break;
-                
-            case 'getResults':
+                  case 'getResults':
                 sendResponse({
                     status: 'success',
-                    data: appState.results
+                    results: appState.results
                 });
                 break;
                 
@@ -233,11 +246,11 @@ function startSearch(username) {
     console.log('🔍 Iniciando busca PROFUNDA para:', username);
     
     // Gera variações do username
-    const variations = generateUsernameVariations(username);
-    console.log(`📝 Geradas ${variations.length} variações do username`);
+    var variations = generateUsernameVariations(username);
+    console.log('📝 Geradas ' + variations.length + ' variações do username');
     
-    // Combina plataformas principais com fóruns
-    const allPlatforms = [...platforms, ...forumSites];
+    // Combina plataformas principais com fóruns usando ES5
+    var allPlatforms = platforms.concat(forumSites);
     
     // Reset do estado
     appState = {
@@ -249,19 +262,19 @@ function startSearch(username) {
         currentCheck: 0
     };
     
-    console.log(`🎯 Total de verificações planejadas: ${appState.totalChecks}`);
+    console.log('🎯 Total de verificações planejadas: ' + appState.totalChecks);
     
-    let checkIndex = 0;
+    var checkIndex = 0;
     
     // Processa cada plataforma com as principais variações
-    allPlatforms.forEach((platform, platformIndex) => {
+    allPlatforms.forEach(function(platform, platformIndex) {
         // Usa as 5 variações mais relevantes para cada plataforma
-        const mainVariations = variations.slice(0, 5);
+        var mainVariations = variations.slice(0, 5);
         
-        mainVariations.forEach((variation, variationIndex) => {
-            const delay = checkIndex * 300; // 300ms entre cada verificação
+        mainVariations.forEach(function(variation, variationIndex) {
+            var delay = checkIndex * 300; // 300ms entre cada verificação
             
-            setTimeout(() => {
+            setTimeout(function() {
                 searchPlatformVariation(platform, variation, username, checkIndex);
             }, delay);
             
@@ -274,13 +287,13 @@ function startSearch(username) {
  * Busca em uma plataforma específica com variação de username
  */
 function searchPlatformVariation(platform, variation, originalUsername, checkIndex) {
-    console.log(`🔎 Verificando ${platform.name} com variação: ${variation}`);
+    console.log('🔎 Verificando ' + platform.name + ' com variação: ' + variation);
     
-    const url = platform.url.replace('{username}', variation);
+    var url = platform.url.replace('{username}', variation);
     
     // Simula verificação da plataforma com algoritmo mais inteligente
-    let found = false;
-    let confidence = 0;
+    var found = false;
+    var confidence = 0;
     
     // Diferentes probabilidades baseadas na categoria e variação
     if (variation === originalUsername) {
@@ -298,7 +311,7 @@ function searchPlatformVariation(platform, variation, originalUsername, checkInd
     }
     
     // Ajusta probabilidade baseada na categoria
-    const categoryMultipliers = {
+    var categoryMultipliers = {
         'social': 1.2,
         'adult': 0.8,
         'cam': 0.7,
@@ -311,10 +324,10 @@ function searchPlatformVariation(platform, variation, originalUsername, checkInd
         'dev': 1.0
     };
     
-    const multiplier = categoryMultipliers[platform.category] || 1.0;
+    var multiplier = categoryMultipliers[platform.category] || 1.0;
     confidence = Math.min(confidence * multiplier, 1.0);
     
-    const result = {
+    var result = {
         platform: platform.name,
         url: url,
         icon: platform.icon,
@@ -334,7 +347,7 @@ function searchPlatformVariation(platform, variation, originalUsername, checkInd
         result.priority = platform.category === 'adult' || platform.category === 'cam' ? 'urgent' : 'normal';
         
         // Adiciona palavras-chave relacionadas encontradas (simulação)
-        const relatedKeywords = searchPatterns.filter(() => Math.random() > 0.7).slice(0, 3);
+        var relatedKeywords = searchPatterns.filter(function() { return Math.random() > 0.7; }).slice(0, 3);
         if (relatedKeywords.length > 0) {
             result.relatedKeywords = relatedKeywords;
         }
@@ -344,7 +357,7 @@ function searchPlatformVariation(platform, variation, originalUsername, checkInd
     appState.currentCheck++;
     appState.progress = Math.round((appState.currentCheck / appState.totalChecks) * 100);
     
-    console.log(`✅ ${platform.name} (${variation}): ${result.status} - Confiança: ${result.confidence}% (${appState.progress}%)`);
+    console.log('✅ ' + platform.name + ' (' + variation + '): ' + result.status + ' - Confiança: ' + result.confidence + '% (' + appState.progress + '%)');
     
     // Finaliza busca quando todas as verificações foram feitas
     if (appState.currentCheck >= appState.totalChecks) {
@@ -359,7 +372,7 @@ function finishSearch() {
     console.log('🏁 Busca PROFUNDA concluída!');
     
     // Organiza resultados por prioridade e confiança
-    appState.results.sort((a, b) => {
+    appState.results.sort(function(a, b) {
         if (a.status === 'found' && b.status !== 'found') return -1;
         if (b.status === 'found' && a.status !== 'found') return 1;
         if (a.status === 'found' && b.status === 'found') {
@@ -375,19 +388,19 @@ function finishSearch() {
     appState.progress = 100;
     
     // Gera estatísticas da busca
-    const stats = {
+    var stats = {
         totalChecks: appState.results.length,
-        found: appState.results.filter(r => r.status === 'found').length,
-        notFound: appState.results.filter(r => r.status === 'not_found').length,
-        highRisk: appState.results.filter(r => r.riskLevel === 'high').length,
-        urgent: appState.results.filter(r => r.priority === 'urgent').length,
+        found: appState.results.filter(function(r) { return r.status === 'found'; }).length,
+        notFound: appState.results.filter(function(r) { return r.status === 'not_found'; }).length,
+        highRisk: appState.results.filter(function(r) { return r.riskLevel === 'high'; }).length,
+        urgent: appState.results.filter(function(r) { return r.priority === 'urgent'; }).length,
         categories: {},
         avgConfidence: 0
     };
     
     // Conta por categoria
-    appState.results.forEach(result => {
-        const cat = result.category || 'other';
+    appState.results.forEach(function(result) {
+        var cat = result.category || 'other';
         stats.categories[cat] = (stats.categories[cat] || 0) + 1;
         
         if (result.status === 'found' && result.confidence) {
@@ -414,7 +427,7 @@ function finishSearch() {
         }
     });
     
-    console.log(`✅ Busca finalizada: ${stats.found}/${stats.totalChecks} encontrados (${Math.round((stats.found/stats.totalChecks)*100)}%)`);
+    console.log('✅ Busca finalizada: ' + stats.found + '/' + stats.totalChecks + ' encontrados (' + Math.round((stats.found/stats.totalChecks)*100) + '%)');
 }
 
 /**

@@ -1,23 +1,52 @@
-# DeepAlias Hunter Pro v1.0.0
+# DeepAlias Hunter Pro v2.0 🚀
 
 [![GitHub repo](https://img.shields.io/badge/GitHub-drrdanilosa%2Fextensions-blue)](https://github.com/drrdanilosa/extensions)
-[![Version](https://img.shields.io/badge/version-1.0.0-green)](https://github.com/drrdanilosa/extensions/releases)
+[![Version](https://img.shields.io/badge/version-2.0.0-brightgreen)](https://github.com/drrdanilosa/extensions/releases)
 [![License](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 [![Firefox](https://img.shields.io/badge/Firefox-Compatible-orange)](https://www.mozilla.org/firefox/)
+[![Platforms](https://img.shields.io/badge/platforms-70+-red)](.)
+[![OSINT](https://img.shields.io/badge/OSINT-Professional-purple)](.)
 
 ## 🎯 Descrição
 
-Extensão OSINT (Open Source Intelligence) para Firefox que permite buscar aliases/usernames em múltiplas plataformas de redes sociais simultaneamente.
+Extensão OSINT (Open Source Intelligence) profissional para Firefox que permite investigação digital profunda através de busca de aliases/usernames em mais de **70 plataformas** com sistema avançado de análise de risco, detecção de palavras-chave e geração de relatórios detalhados.
 
-## ✨ Características
+## ✨ Características Principais v2.0
 
-- **Interface moderna**: Design responsivo com gradientes e animações
-- **Busca em 8 plataformas**: GitHub, Twitter, Instagram, Facebook, LinkedIn, Reddit, YouTube, TikTok
-- **Progresso visual**: Barra de progresso em tempo real
-- **Resultados organizados**: Perfis encontrados aparecem primeiro
-- **Exportação**: Copia resultados para clipboard
-- **Validação**: Verifica formato do username antes da busca
-- **Status de conexão**: Indica se a extensão está funcionando corretamente
+### 🔍 **Busca Expandida**
+- **70+ plataformas** categorizadas por tipo
+- **69 variações** de username automaticamente geradas
+- **9 categorias** de sites: social, adult, cam, portfolio, casting, forum, archive, linkinbio, images
+- **Sistema inteligente** de detecção baseado em padrões
+
+### ⚠️ **Análise de Risco Avançada**
+- **Classificação de prioridade**: Normal vs Urgente
+- **Níveis de risco**: Low, Medium, High
+- **Pontuação de confiança**: 0-100% por resultado
+- **Detecção de conteúdo adulto** com alertas visuais
+
+### 🏷️ **Categorização Inteligente**
+- 🔷 **Social Media**: Instagram, Facebook, Twitter, TikTok, Discord, Telegram
+- 🟥 **Adult Content**: OnlyFans, Fansly, JustForFans, ManyVids, Clips4Sale
+- 🟥 **Cam Sites**: Chaturbate, Stripchat, LiveJasmin, MyFreeCams, CamSoda
+- 🟨 **Portfolio**: Behance, ArtStation, ModelMayhem, DeviantArt
+- 🟦 **Casting/Modeling**: Backstage, StarNow, CastingNetworks, Model Mayhem
+- 🔗 **Link-in-Bio**: Linktree, Beacons.ai, Carrd, Bio.link
+- 🟪 **Image Sharing**: Imgur, Pixiv, FurAffinity, 500px
+- 💬 **Forums**: Reddit, Stack Overflow, Quora, GitHub
+- 📚 **Archives**: Internet Archive, Archive.today, backup sites
+
+### 🎯 **Detecção de Palavras-chave**
+- **50+ termos** NSFW e relacionados a modelagem
+- **Análise contextual** automática
+- **Associação de keywords** com resultados encontrados
+- **Flagging automático** de conteúdo sensível
+
+### 📊 **Dashboard Estatístico**
+- **Métricas em tempo real**: Total, Encontrados, Urgentes, Alto Risco, Adulto
+- **Gráficos visuais** por categoria
+- **Indicadores de progresso** detalhados
+- **Resumo executivo** da investigação
 
 ## 📁 Estrutura de Arquivos
 
